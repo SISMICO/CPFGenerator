@@ -1,6 +1,5 @@
 package br.com.sismico.cpfgenerator
 
-import org.junit.Assert.assertEquals
 import org.junit.Test
 import kotlin.test.assertTrue
 
@@ -33,25 +32,5 @@ class CPFTest {
         val randomCPF = cpf.generator(startWith)
 
         assertTrue(cpf.validate(randomCPF))
-    }
-
-    @Test
-    fun `when first digit is valid`() {
-        val initial = "328045868"
-        val firstDigit = "4"
-        val cpf = CPF()
-        val result = cpf.div11(initial)
-
-        assertEquals(firstDigit, result)
-    }
-
-    @Test
-    fun `when second digit is valid`() {
-        val initial = "3280458684"
-        val firstDigit = "7"
-        val cpf = CPF()
-        val result = cpf.div11(initial)
-
-        assertEquals(firstDigit, result)
     }
 }

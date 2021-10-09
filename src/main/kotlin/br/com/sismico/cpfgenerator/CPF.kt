@@ -1,7 +1,7 @@
 package br.com.sismico.cpfgenerator
 
-import toNumberInt
 import kotlin.random.Random
+import br.com.sismico.cpfgenerator.DigitVerification.Digit.div11
 
 class CPF {
 
@@ -24,13 +24,6 @@ class CPF {
 
     fun generator(): String = generator("")
 
-    fun div11(initial: String): String {
-        val length = initial.length + 1
-        val mod = initial
-            .mapIndexed { index, c -> c.toNumberInt() * (length - index) }
-            .sum()
-            .let { it % 11 }
-        return if (mod in 0..1) "0" else (11 - mod).toString()
-    }
+
 
 }
